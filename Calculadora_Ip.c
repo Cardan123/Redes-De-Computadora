@@ -4,12 +4,12 @@
 
 
 
-int main(int argc, char *argv[]){
-    unsigned char string_ip_completa[12];
+int main(void){
+    unsigned char string_ip[12];
 
     printf("Introduce tu ip\n");
-    scanf("%s",&string_ip_completa);
-    unsigned char  * primer_octeto = strtok(string_ip_completa,".");
+    scanf("%s",&string_ip);
+    unsigned char  * primer_octeto = strtok(string_ip,".");
 
     if (atoi(primer_octeto) & 128) {
         if(atoi(primer_octeto) & 64){
