@@ -5,29 +5,29 @@
 
 
 int main(void){
-    unsigned char string_ip[12];
+    unsigned char * string_ip;
 
     printf("Introduce tu ip\n");
-    scanf("%s",&string_ip);
+    scanf("%s",string_ip);
     unsigned char  * primer_octeto = strtok(string_ip,".");
-
-    if (atoi(primer_octeto) & 128) {
-        if(atoi(primer_octeto) & 64){
-            if(atoi(primer_octeto) & 32){
-                if(atoi(primer_octeto) & 16){
-                    printf("La ip es de clase E");
+    unsigned short int  i=atoi(primer_octeto);
+    if (i & 128) {
+        if(i & 64){
+            if(i & 32){
+                if(i & 16){
+                    printf("La ip es de clase E\n");
                 }
                 else
-                    printf("La ip es de clase D");
+                    printf("La ip es de clase D\n");
             }
             else
-                printf("La ip es de clase C");
+                printf("La ip es de clase C\n");
         }
         else
-            printf("La ip es de clase B");
+            printf("La ip es de clase B\n");
     }
     else
-        printf("La ip es de clase A");
+        printf("La ip es de clase A\n");
 
     return 0;
 }

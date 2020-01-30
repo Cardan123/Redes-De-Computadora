@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<OPCION_MULTIPLE_MOVIECLIP PLANTILLA="prototipo_OMMC.swf">
+  <PREGUNTA TEXTO="¿What is the name of this song?" IMAGEN="imagen.jpg" RESPUESTA="OP1-0;OP2-0;OP3-1;OP4-0;OP5-0">
+    <OPCION> A Woman </OPCION>
+    <OPCION> Angels </OPCION>
+    <OPCION> Be </OPCION>
+    <OPCION> Circus </OPCION>
+    <OPCION> Heal The World </OPCION>
+  </PREGUNTA>
+</OPCION_MULTIPLE_MOVIECLIP>

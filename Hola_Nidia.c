@@ -1,6 +1,8 @@
 #include <stdio.h>
 
 int main(void){
-    printf("Hola Nidia!");
+unsigned short int i;
+for(i=0;i<5;i++)
+    printf("Hola Nidia!\n");
     return 0;
 }

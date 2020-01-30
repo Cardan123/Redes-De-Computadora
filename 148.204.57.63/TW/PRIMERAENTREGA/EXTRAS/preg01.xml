@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<OPCION_MULTIPLE PLANTILLA="prototipo_OM.swf">
+  <PREGUNTA TEXTO="¿Cual de las siguientes opciones describe mejor el protocolo UDP?" RESPUESTA="OP1-0;OP2-0;OP3-0;OP4-1;OP5-0">
+    <OPCION> Un protocolo que acusa recibo de datagramas defectuosos o intactos </OPCION>
+    <OPCION> Un protocolo que detecta los errores y solicita la retransmision desde el origen </OPCION>
+    <OPCION> Un protocolo que procesa los datagramas y solicita la retransmision cuando es necesario </OPCION>
+    <OPCION> Un protocolo que intercambia datagramas sin acuse de recibo ni garantia de entrega </OPCION>
+   </PREGUNTA>
+</OPCION_MULTIPLE>

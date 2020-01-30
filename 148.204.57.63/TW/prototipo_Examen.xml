@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<EXAMEN TITULO="Prototipo de Examen" DESCRIPCION="Esto es un prototipo para la primera presentacion del TT ">
+	<PREGUNTA PLANTILLA="prototipo_OM.swf">preg01.xml</PREGUNTA>
+	<PREGUNTA PLANTILLA="prototipo_LLB.swf">preg01.xml</PREGUNTA>  
+	<PREGUNTA PLANTILLA="prototipo_OMMC.swf">preg01.xml</PREGUNTA>
+	<PREGUNTA PLANTILLA="prototipo_RC.swf">preg03.xml</PREGUNTA>
+	<PREGUNTA PLANTILLA="prototipo_OMMC.swf">preg04.xml</PREGUNTA>
+	<PREGUNTA PLANTILLA="prototipo_FVMC.swf">preg08.xml</PREGUNTA>
+	<PREGUNTA PLANTILLA="prototipo_SA.swf">preg05.xml</PREGUNTA>
+	<PREGUNTA PLANTILLA="prototipo_LLB.swf">preg07.xml</PREGUNTA>   		
+</EXAMEN>
