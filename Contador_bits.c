@@ -3,9 +3,10 @@
 int main(void){
 unsigned char i = 128;
 unsigned char letra;
-unsigned short int contador = 0 , x = 0;
+unsigned char x;
+unsigned char contador = 0 ;
 scanf("%c",&letra);
-for(x = 0;x < 8;x++){
+for(x = 128 ;x > 0 ; x >>= 1){
    if (letra & i){
 	contador++;
    }
