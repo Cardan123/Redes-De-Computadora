@@ -10,7 +10,7 @@ int main(void){
     unsigned char x = 0;
 
     printf("Introduce tu ip\n");
-    scanf("%s",&string_ip);
+    scanf("%s",string_ip);
     
     unsigned char * aux = strtok(string_ip, ".");
 	while(aux != NULL)

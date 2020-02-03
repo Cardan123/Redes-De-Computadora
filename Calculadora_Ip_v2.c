@@ -14,7 +14,7 @@ int main(void){
     unsigned char x = 0;
 
     printf("Introduce tu ip\n");
-    scanf("%s",&string_ip);
+    scanf("%s",string_ip);
     
     unsigned char *aux = strtok(string_ip, ".");
 	while(aux != NULL)
@@ -114,11 +114,11 @@ void broadcast(unsigned char ip[],unsigned char clase){
 
 void rango(unsigned char ip[],unsigned char clase){
          if (clase == 1){
-            printf("\nDireccion de red: %d.%d.%d.%d - %d.%d.%d.%d ",ip[0]&255,ip[1]&0,ip[2]&0,(ip[3]&0)+1,ip[0]|0,ip[1]|255,ip[2]|255,(ip[3]|255)-1);
+            printf("\nRango: %d.%d.%d.%d - %d.%d.%d.%d \n",ip[0]&255,ip[1]&0,ip[2]&0,(ip[3]&0)+1,ip[0]|0,ip[1]|255,ip[2]|255,(ip[3]|255)-1);
         } else if (clase == 2){
-            printf("\nDireccion de red: %d.%d.%d.%d - %d.%d.%d.%d ",ip[0]&255,ip[1]&255,ip[2]&0,(ip[3]&0)+1,ip[0]|0,ip[1]|0,ip[2]|255,(ip[3]|255)-1);
+            printf("\nRango: %d.%d.%d.%d - %d.%d.%d.%d \n",ip[0]&255,ip[1]&255,ip[2]&0,(ip[3]&0)+1,ip[0]|0,ip[1]|0,ip[2]|255,(ip[3]|255)-1);
         } else if (clase == 3){
-            printf("\nDireccion de red: %d.%d.%d.%d - %d.%d.%d.%d ",ip[0]&255,ip[1]&255,ip[2]&255,(ip[3]&0)+1,ip[0]|0,ip[1]|0,ip[2]|0,(ip[3]|255)-1);
+            printf("\nRango: %d.%d.%d.%d - %d.%d.%d.%d \n",ip[0]&255,ip[1]&255,ip[2]&255,(ip[3]&0)+1,ip[0]|0,ip[1]|0,ip[2]|0,(ip[3]|255)-1);
         }
     return;
 }
