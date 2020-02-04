@@ -84,7 +84,7 @@ void tipo(unsigned char ip[],unsigned char clase){
         
         } else if (clase == 3){
             
-            if(ip[3]&255 == 255){
+            if((ip[3]&255) == 255){
                 printf("Tipo: Broadcast\n");
             }else if(!(ip[3]|0)){
                 printf("Tipo: Red\n");
