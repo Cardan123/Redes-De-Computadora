@@ -16,7 +16,7 @@ int main(void){
 	while(aux != NULL)
 	{
         ip[x] = atoi(aux);
-		aux = strtok(NULL, ".");
+	aux = strtok(NULL, ".");
         x ++;
 	}
 
