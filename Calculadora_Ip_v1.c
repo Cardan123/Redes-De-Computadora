@@ -1,24 +1,13 @@
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+
 
 
 
 int main(void){
-    unsigned char string_ip[15];
     unsigned char ip[4];
-    unsigned char x = 0;
-
+	
     printf("Introduce tu ip\n");
-    scanf("%s",string_ip);
-    
-    unsigned char * aux = strtok(string_ip, ".");
-	while(aux != NULL)
-	{
-        ip[x] = atoi(aux);
-	aux = strtok(NULL, ".");
-        x ++;
-	}
+    scanf("%d.%d.%d.%d",&ip[0],&ip[1],&ip[2],&ip[3]);
 
 
     if (ip[0] & 128) {

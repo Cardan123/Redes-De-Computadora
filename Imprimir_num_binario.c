@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<stdlib.h>
 
 
 void print_binint(unsigned char numero)
@@ -16,10 +15,10 @@ void print_binint(unsigned char numero)
 
 int main()
 {
-    unsigned char num[10];
+    unsigned char num;
     printf("introduzca un numero entero:");
-    scanf("%s",num);
+    scanf("%d",&num);
     printf("Numero binario\n");
-    print_binint(atoi(num));
+    print_binint(num);
     return 0;
 }
