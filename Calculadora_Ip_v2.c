@@ -4,7 +4,6 @@
 void red(unsigned char[],unsigned char[]);
 void broadcast(unsigned char[],unsigned char[]);
 void rango(unsigned char[],unsigned char[]);
-unsigned char i,x;
 
 
 int main(){    
@@ -104,4 +103,3 @@ void rango(unsigned char ip[],unsigned char ip_m[]){
     printf("\nRango: %hhu.%hhu.%hhu.%hhu - %hhu.%hhu.%hhu.%hhu \n",ip[0]&ip_m[0],ip[1]&ip_m[1],ip[2]&ip_m[2],(ip[3]&ip_m[3])+1,ip[0]|(ip_m[0]^(255)),ip[1]|(ip_m[1]^(255)),ip[2]|(ip_m[2]^(255)),(ip[3]|(ip_m[3]^255))-1);
     return;
 }
-
