@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 
-void tipo(unsigned char[],unsigned char);
 void red(unsigned char[],unsigned char[]);
 void broadcast(unsigned char[],unsigned char[]);
 void rango(unsigned char[],unsigned char[]);
+unsigned char i,x;
 
 
 int main(){    
@@ -28,9 +28,17 @@ int main(){
                 ip_m[1] = 255;
                 ip_m[2] = 255,
                 ip_m[3] = 0;
+                
                 printf("La ip es de clase C\n");
 		        printf("Mascara: %d.%d.%d.%d\n",ip_m[0],ip_m[1],ip_m[2],ip_m[3]);
-                tipo(ip,3);
+                
+                if(ip[3] == 255){
+                    printf("Tipo: Broadcast\n");
+                }else if(ip[3] == 0){
+                    printf("Tipo: Red\n");
+                }else 
+                    printf("Tipo: Host\n");
+
                 red(ip,ip_m);
                 broadcast(ip,ip_m);
                 rango(ip,ip_m);
@@ -41,9 +49,17 @@ int main(){
             ip_m[1] = 255;
             ip_m[2] = 0,
             ip_m[3] = 0;
+
             printf("La ip es de clase B\n");
 	        printf("Mascara: %d.%d.%d.%d\n",ip_m[0],ip_m[1],ip_m[2],ip_m[3]);
-            tipo(ip,2);
+           
+            if((ip[2] == 255)&(ip[3] == 255)){
+                printf("Tipo: Broadcast\n");
+            }else if((ip[2] == 0)&(ip[3] == 0)){
+                printf("Tipo: Red\n");
+            }else 
+                printf("Tipo: Host\n"); 
+
             red(ip,ip_m);
             broadcast(ip,ip_m);
             rango(ip,ip_m);
@@ -54,9 +70,18 @@ int main(){
         ip_m[1] = 0;
         ip_m[2] = 0,
         ip_m[3] = 0;
+
         printf("La ip es de clase A\n");
 	    printf("Mascara: %d.%d.%d.%d\n",ip_m[0],ip_m[1],ip_m[2],ip_m[3]);
-        tipo(ip,1);
+
+
+        if((ip[1] == 255)&(ip[2] == 255)&(ip[3] == 255)){
+            printf("Tipo: Broadcast\n");
+         }else if((ip[1] == 0)&(ip[2] == 0)&(ip[3] == 0)){
+            printf("Tipo: Red\n");
+        }else 
+            printf("Tipo: Host\n"); 
+
         red(ip,ip_m);
         broadcast(ip,ip_m);
         rango(ip,ip_m);
@@ -64,35 +89,6 @@ int main(){
     return 0;
 }
 
-void tipo(unsigned char ip[],unsigned char clase){
-        
-        if (clase == 1){
-            if(((ip[3]&255) == 255)&((ip[2]&255) == 255)&((ip[3]&255) == 255)){
-                printf("Tipo: Broadcast\n");
-            }else if(!(ip[2]|0)&!(ip[3]|0)){
-                printf("Tipo: Red\n");
-            }else 
-                printf("Tipo: Host\n"); 
-        } else if (clase == 2){
-          
-            if(((ip[2]&255) == 255)&((ip[3]&255) == 255)){
-                printf("Tipo: Broadcast\n");
-            }else if(!(ip[2]|0)&!(ip[3]|0)){
-                printf("Tipo: Red\n");
-            }else 
-                printf("Tipo: Host\n"); 
-        
-        } else if (clase == 3){
-            
-            if((ip[3]&255) == 255){
-                printf("Tipo: Broadcast\n");
-            }else if(!(ip[3]|0)){
-                printf("Tipo: Red\n");
-            }else 
-                printf("Tipo: Host\n");
-        }
-    return;
-}
 
 void red(unsigned char ip[],unsigned char ip_m[]){
     printf("Direccion de red: %hhu.%hhu.%hhu.%hhu",ip[0]&ip_m[0],ip[1]&ip_m[1],ip[2]&ip_m[2],ip[3]&ip_m[3]);
@@ -105,6 +101,6 @@ void broadcast(unsigned char ip[],unsigned char ip_m[]){
 }
 
 void rango(unsigned char ip[],unsigned char ip_m[]){
-    printf("\nRango: %hhu.%hhu.%hhu.%hhu - %hhu.%hhu.%hhu.%hhu \n",ip[0]&ip_m[0],ip[1]&ip_m[1],ip[2]&ip_m[2],(ip[3]&ip_m[3])+1,ip[0]|(ip_m[0]^(255)),ip[1]|(ip_m[1]^(255)),ip[2]|(ip_m[2]^(255)),(ip[3]|(ip_m[3]^(255)))-1);
+    printf("\nRango: %hhu.%hhu.%hhu.%hhu - %hhu.%hhu.%hhu.%hhu \n",ip[0]&ip_m[0],ip[1]&ip_m[1],ip[2]&ip_m[2],(ip[3]&ip_m[3])+1,ip[0]|(ip_m[0]^(255)),ip[1]|(ip_m[1]^(255)),ip[2]|(ip_m[2]^(255)),(ip[3]|(ip_m[3]^255))-1);
 }
 
