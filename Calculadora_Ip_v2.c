@@ -12,16 +12,16 @@ int main(){
     unsigned char ip_m[4]={255,255,255,255};
 	
     printf("Introduce tu ip\n");
-    scanf("%d.%d.%d.%d",&ip[0],&ip[1],&ip[2],&ip[3]);
+    scanf("%hhu.%hhu.%hhu.%hhu",&ip[0],&ip[1],&ip[2],&ip[3]);
  
     if (ip[0] & 128) {
         if(ip[0] & 64){
             if(ip[0] & 32){
                 if(ip[0] & 16){
-                    printf("La ip es de clase E\n");
+                    printf("Clase: E\n");
                 }
                 else
-                    printf("La ip es de clase D\n");
+                    printf("Clase: D\n");
             }
             else{
                 ip_m[0] = 255;
@@ -29,7 +29,7 @@ int main(){
                 ip_m[2] = 255,
                 ip_m[3] = 0;
                 
-                printf("La ip es de clase C\n");
+                printf("Clase: C\n");
 		        printf("Mascara: %d.%d.%d.%d\n",ip_m[0],ip_m[1],ip_m[2],ip_m[3]);
                 
                 if(ip[3] == 255){
@@ -50,7 +50,7 @@ int main(){
             ip_m[2] = 0,
             ip_m[3] = 0;
 
-            printf("La ip es de clase B\n");
+            printf("Clase: B\n");
 	        printf("Mascara: %d.%d.%d.%d\n",ip_m[0],ip_m[1],ip_m[2],ip_m[3]);
            
             if((ip[2] == 255)&(ip[3] == 255)){
@@ -71,7 +71,7 @@ int main(){
         ip_m[2] = 0,
         ip_m[3] = 0;
 
-        printf("La ip es de clase A\n");
+        printf("Clase: A\n");
 	    printf("Mascara: %d.%d.%d.%d\n",ip_m[0],ip_m[1],ip_m[2],ip_m[3]);
 
 
@@ -102,5 +102,6 @@ void broadcast(unsigned char ip[],unsigned char ip_m[]){
 
 void rango(unsigned char ip[],unsigned char ip_m[]){
     printf("\nRango: %hhu.%hhu.%hhu.%hhu - %hhu.%hhu.%hhu.%hhu \n",ip[0]&ip_m[0],ip[1]&ip_m[1],ip[2]&ip_m[2],(ip[3]&ip_m[3])+1,ip[0]|(ip_m[0]^(255)),ip[1]|(ip_m[1]^(255)),ip[2]|(ip_m[2]^(255)),(ip[3]|(ip_m[3]^255))-1);
+    return;
 }
 
